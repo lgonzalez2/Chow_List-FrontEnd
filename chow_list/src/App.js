@@ -80,7 +80,8 @@ class App extends Component {
               <Main 
               {...props} 
               loggedInStatus={this.state.loggedInStatus}
-              handleLogout={this.handleLogout} />
+              handleLogout={this.handleLogout}
+              user={this.state.user} />
             )}>
             </Route>
           </Switch>

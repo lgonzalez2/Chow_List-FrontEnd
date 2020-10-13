@@ -35,9 +35,7 @@ class home extends Component {
 
         return (
             <div>
-                <h1>What would you like to do?</h1><br/>
-                <h1>Status: {this.props.loggedInStatus}</h1><br/>
-
+                <h1>Chow List Login/SignUp Page</h1><br/>
                 <div>
                     <Login handleSuccessfulAuth={this.handleSuccessfulAuth} />
                     <br></br>

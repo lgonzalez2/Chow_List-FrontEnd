@@ -1,6 +1,6 @@
 import React, { Component } from 'react'; 
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 class Main extends Component {
 
@@ -26,9 +26,20 @@ class Main extends Component {
 
         return (
             <div>
+                <h1>Chow List Main Page</h1>
                 <br></br>
-                <button onClick={() => this.handleLogoutClick()}>Logout</button>
-                <h1>{this.props.loggedInStatus}</h1>
+                <div className="topnav">
+                    <a className="active" href="#home">Home</a>
+                    <a href="#news">Profile</a>
+                    <a href="#contact">Search Restaurants</a>
+                    <a href="#about">Reviews</a>
+                    <a href="/" onClick={() => this.handleLogoutClick()}>Logout</a>
+                </div>
+                <br></br>
+                <div className="greeting">
+                    <h1>Welcome to Chow List</h1>
+                    <h1 className="username">{this.props.user.username}</h1>
+                </div>
             </div>
         )
     }
