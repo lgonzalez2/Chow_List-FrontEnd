@@ -124,6 +124,8 @@ class Profile extends Component {
                         )}
                     </div>
                     <div className="info-container">
+                        <br></br>
+                        <br></br>
                         <h1 className="username">{this.props.user.username}</h1>
                         <h3>{bio}</h3>
                         <br></br>
@@ -143,6 +145,9 @@ class Profile extends Component {
                 </div>
                 <div className="list-header" >
                     <h1>My List</h1>
+                </div>
+                <div className="list-container">
+
                 </div>
             </div>
         )
