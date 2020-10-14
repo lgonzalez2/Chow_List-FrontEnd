@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import Login from './Login';
 import SignUp from './Signup';
 import { Redirect } from 'react-router-dom';
@@ -9,22 +8,12 @@ class home extends Component {
         super(props);
 
         this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this);
-        this.handleLogoutClick = this.handleLogoutClick.bind(this);
     }
 
 
     handleSuccessfulAuth(data) {
         this.props.handleLogin(data.user);
         this.props.history.push("/main");
-    }
-
-    handleLogoutClick() {
-        axios.delete("http://localhost:3001/logout", { withCredentials: true })
-        .then(response => {
-            this.props.handleLogout();
-        }).catch(error => {
-            console.log("logout error", error);
-        });
     }
     
     
@@ -35,18 +24,39 @@ class home extends Component {
 
         return (
             <div>
-                <h1>What would you like to do?</h1><br/>
-                <h1>Status: {this.props.loggedInStatus}</h1><br/>
-
-                <div>
-                    <Login handleSuccessfulAuth={this.handleSuccessfulAuth} />
-                    <br></br>
+                <div className="main-header" >
+                    <h1>Chow List</h1>
                 </div>
-                <div>
-                    <SignUp handleSuccessfulAuth={this.handleSuccessfulAuth}/> 
+                <div className="home-container">
                     <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <h1>Welcome to Chow List, your favorite hub for traveling foodies!</h1>
+                    <br></br>
+                    <br></br>
+                    <h2>Please Login to continue</h2>
+                        <h2>OR</h2> 
+                    <h2>Please Sign Up if you don't already have an account! </h2>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <div className="home-container-2">
+                        <div className="login-container">
+                            <div>
+                                <Login handleSuccessfulAuth={this.handleSuccessfulAuth} />
+                                <br></br>
+                            </div>
+                        </div>
+                        <div className="signup-container">
+                            <div>
+                                <SignUp handleSuccessfulAuth={this.handleSuccessfulAuth}/> 
+                                <br></br>
+                            </div>
+                        </div>
+                        <div id="clear"></div>
+                    </div>
                 </div>
-                <button onClick={() => this.handleLogoutClick()} >Logout</button>
             </div>
         );
     }

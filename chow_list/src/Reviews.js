@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 
-class Main extends Component {
+class Reviews extends Component {
 
     constructor(props) {
         super(props);
@@ -26,25 +26,21 @@ class Main extends Component {
     }
 
     render() {
-        if (this.props.loggedInStatus === "NOT_LOGGED_IN") {
-            return <Redirect to="/" />
-        }
-
         return (
             <div>
                 <div className="main-header" >
                     <h1>Chow List</h1>
                 </div>
                 <div className="topnav">
-                    <a className="active" href="/main">Home</a>
+                    <a href="/main">Home</a>
                     <a href="/user_profile">Profile</a>
                     <a href="/search_restaurants">Search Restaurants</a>
-                    <a href="/reviews">Reviews</a>
+                    <a className="active" href="/reviews">Reviews</a>
                     <a href="/" onClick={() => this.handleLogoutClick()}>Logout</a>
                 </div>
                 <br></br>
                 <div className="greeting">
-                    <h1>Welcome to Chow List</h1>
+                    <h1>Reviews Page</h1>
                     <h1 className="username">{this.props.user.username}</h1>
                 </div>
             </div>
@@ -52,4 +48,4 @@ class Main extends Component {
     }
 }
 
-export default Main;
+export default Reviews;

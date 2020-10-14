@@ -4,6 +4,9 @@ import Home from './Home';
 import Main from './Main';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import axios from 'axios';
+import Profile from './Profile';
+import Search from './Search';
+import Reviews from './Reviews';
 
 
 class App extends Component {
@@ -18,6 +21,7 @@ class App extends Component {
 
     this.handleLogin = this.handleLogin.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
+    this.handleUserUpdate = this.handleUserUpdate.bind(this);
   }
 
 
@@ -59,6 +63,12 @@ class App extends Component {
     })
   }
 
+  handleUserUpdate(data) {
+    this.setState({
+      user: data
+    })
+  }
+
 
   render() {
     return (
@@ -80,7 +90,39 @@ class App extends Component {
               <Main 
               {...props} 
               loggedInStatus={this.state.loggedInStatus}
-              handleLogout={this.handleLogout} />
+              handleLogout={this.handleLogout}
+              user={this.state.user} />
+            )}>
+            </Route>
+
+            <Route exact path='/user_profile' 
+            render={props => (
+              <Profile 
+              {...props} 
+              loggedInStatus={this.state.loggedInStatus}
+              handleLogout={this.handleLogout}
+              handleUserUpdate={this.handleUserUpdate}
+              user={this.state.user} />
+            )}>
+            </Route>
+
+            <Route exact path="/search_restaurants"
+            render={props => (
+              <Search 
+                {...props} 
+                handleLogout={this.handleLogout} 
+                loggedInStatus={this.state.loggedInStatus}
+                user={this.state.user} />
+            )}>
+            </Route>
+
+            <Route exact path="/reviews"
+            render={props => (
+              <Reviews 
+                {...props} 
+                handleLogout={this.handleLogout} 
+                loggedInStatus={this.state.loggedInStatus}
+                user={this.state.user} />
             )}>
             </Route>
           </Switch>

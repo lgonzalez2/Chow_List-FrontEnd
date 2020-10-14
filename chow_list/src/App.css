@@ -1,43 +1,180 @@
+#root {
+  text-align: center;
+  background-color: grey;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.home-container {
+  width: 1200px;
+  background-color: white;
+  margin: auto;
+  border: 2px solid #030303;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.home-container-2 {
+  width: 1200px;
+  background-color: #ffcc33;
+  margin: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.login-container {
+  width: 600px;
+  float: left;
+  height: 400px;
+  background-color: white;
+}
+.signup-container {
+  width: 600px;
+  float: left;
+  height: 400px;
+  background-color: white;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+  border: 2px solid #030303;
+  width: 1200px;
+  margin-left: 118px;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px 84px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #0e58e0;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
 .error {
   color: red;
+}
+
+h1 {
+  text-align: center;
+}
+
+.username {
+  color: #0e58e0;
+}
+
+.main-header {
+  background-color: #0e58e0;
+  overflow: hidden;
+  border: 2px solid #030303;
+  width: 1200px;
+  margin-left: 118px;
+}
+
+.main-header h1 {
+  float: center;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 50px;
+}
+
+.profile-header {
+  background-color: #0e58e0;
+  overflow: hidden;
+  border: 2px solid #030303;
+  width: 1200px;
+  margin-left: 118px;
+}
+
+.profile-header h1 {
+  float: center;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.profile-container {
+  width: 1200px;
+  background-color: #ffcc33;
+  margin: auto;
+  border: 2px solid #030303;
+}
+
+.pic-container {
+  width: 600px;
+  float: left;
+  height: 500px;
+  background-color: white;
+}
+
+.profile-img {
+  max-width:80%;
+  max-height:80%;
+  border: 3px solid #030303;
+  margin-top: 38px;
+  margin-left: 60px;
+}
+
+.pic-container button {
+  margin-left: 60px;
+}
+
+.info-container {
+  width: 600px;
+  float: left;
+  height: 500px;
+  background-color: white;
+}
+.info-container h1 {
+  margin-top: 80px;
+  margin-right: 60px;
+  font-size: 50px;
+}
+
+.info-container h3 {
+  margin-top: 40px;
+  margin-right: 60px;
+}
+
+.info-container button {
+  margin-right: 60px;
+}
+
+#clear {
+  clear: both;
+}
+
+.list-header {
+  background-color: #0e58e0;
+  overflow: hidden;
+  border: 2px solid #030303;
+  width: 1200px;
+  margin-left: 118px;
+}
+
+.list-header h1 {
+  float: center;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 20px;
 }
