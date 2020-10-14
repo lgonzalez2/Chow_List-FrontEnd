@@ -32,8 +32,9 @@ class Main extends Component {
 
         return (
             <div>
-                <h1>Chow List Main Page(Home)</h1>
-                <br></br>
+                <div className="main-header" >
+                    <h1>Chow List</h1>
+                </div>
                 <div className="topnav">
                     <a className="active" href="/main">Home</a>
                     <a href="/user_profile">Profile</a>

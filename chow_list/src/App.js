@@ -21,6 +21,7 @@ class App extends Component {
 
     this.handleLogin = this.handleLogin.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
+    this.handleUserUpdate = this.handleUserUpdate.bind(this);
   }
 
 
@@ -62,6 +63,12 @@ class App extends Component {
     })
   }
 
+  handleUserUpdate(data) {
+    this.setState({
+      user: data
+    })
+  }
+
 
   render() {
     return (
@@ -94,6 +101,7 @@ class App extends Component {
               {...props} 
               loggedInStatus={this.state.loggedInStatus}
               handleLogout={this.handleLogout}
+              handleUserUpdate={this.handleUserUpdate}
               user={this.state.user} />
             )}>
             </Route>

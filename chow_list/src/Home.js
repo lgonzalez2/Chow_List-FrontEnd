@@ -24,14 +24,38 @@ class home extends Component {
 
         return (
             <div>
-                <h1>Chow List Login/SignUp Page</h1><br/>
-                <div>
-                    <Login handleSuccessfulAuth={this.handleSuccessfulAuth} />
-                    <br></br>
+                <div className="main-header" >
+                    <h1>Chow List</h1>
                 </div>
-                <div>
-                    <SignUp handleSuccessfulAuth={this.handleSuccessfulAuth}/> 
+                <div className="home-container">
                     <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <h1>Welcome to Chow List, your favorite hub for traveling foodies!</h1>
+                    <br></br>
+                    <br></br>
+                    <h2>Please Login to continue</h2>
+                        <h2>OR</h2> 
+                    <h2>Please Sign Up if you don't already have an account! </h2>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <div className="home-container-2">
+                        <div className="login-container">
+                            <div>
+                                <Login handleSuccessfulAuth={this.handleSuccessfulAuth} />
+                                <br></br>
+                            </div>
+                        </div>
+                        <div className="signup-container">
+                            <div>
+                                <SignUp handleSuccessfulAuth={this.handleSuccessfulAuth}/> 
+                                <br></br>
+                            </div>
+                        </div>
+                        <div id="clear"></div>
+                    </div>
                 </div>
             </div>
         );

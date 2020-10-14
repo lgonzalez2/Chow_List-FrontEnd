@@ -1,11 +1,46 @@
+#root {
+  text-align: center;
+  background-color: grey;
+}
+
 .App {
   text-align: center;
+}
+
+
+.home-container {
+  width: 1200px;
+  background-color: white;
+  margin: auto;
+  border: 2px solid #030303;
+}
+
+.home-container-2 {
+  width: 1200px;
+  background-color: #ffcc33;
+  margin: auto;
+}
+
+.login-container {
+  width: 600px;
+  float: left;
+  height: 400px;
+  background-color: white;
+}
+.signup-container {
+  width: 600px;
+  float: left;
+  height: 400px;
+  background-color: white;
 }
 
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: #333;
   overflow: hidden;
+  border: 2px solid #030303;
+  width: 1200px;
+  margin-left: 118px;
 }
 
 /* Style the links inside the navigation bar */
@@ -13,7 +48,7 @@
   float: left;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 108px;
+  padding: 20px 84px;
   text-decoration: none;
   font-size: 17px;
 }
@@ -40,4 +75,106 @@ h1 {
 
 .username {
   color: #0e58e0;
+}
+
+.main-header {
+  background-color: #0e58e0;
+  overflow: hidden;
+  border: 2px solid #030303;
+  width: 1200px;
+  margin-left: 118px;
+}
+
+.main-header h1 {
+  float: center;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 50px;
+}
+
+.profile-header {
+  background-color: #0e58e0;
+  overflow: hidden;
+  border: 2px solid #030303;
+  width: 1200px;
+  margin-left: 118px;
+}
+
+.profile-header h1 {
+  float: center;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.profile-container {
+  width: 1200px;
+  background-color: #ffcc33;
+  margin: auto;
+  border: 2px solid #030303;
+}
+
+.pic-container {
+  width: 600px;
+  float: left;
+  height: 500px;
+  background-color: white;
+}
+
+.profile-img {
+  max-width:80%;
+  max-height:80%;
+  border: 3px solid #030303;
+  margin-top: 38px;
+  margin-left: 60px;
+}
+
+.pic-container button {
+  margin-left: 60px;
+}
+
+.info-container {
+  width: 600px;
+  float: left;
+  height: 500px;
+  background-color: white;
+}
+.info-container h1 {
+  margin-top: 80px;
+  margin-right: 60px;
+  font-size: 50px;
+}
+
+.info-container h3 {
+  margin-top: 40px;
+  margin-right: 60px;
+}
+
+.info-container button {
+  margin-right: 60px;
+}
+
+#clear {
+  clear: both;
+}
+
+.list-header {
+  background-color: #0e58e0;
+  overflow: hidden;
+  border: 2px solid #030303;
+  width: 1200px;
+  margin-left: 118px;
+}
+
+.list-header h1 {
+  float: center;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 20px;
 }
