@@ -16,6 +16,7 @@
 }
 
 .home-container-2 {
+  height: 300px;
   width: 1200px;
   background-color: #ffcc33;
   margin: auto;
@@ -24,13 +25,13 @@
 .login-container {
   width: 600px;
   float: left;
-  height: 400px;
+  height: 300px;
   background-color: white;
 }
 .signup-container {
   width: 600px;
   float: left;
-  height: 400px;
+  height: 300px;
   background-color: white;
 }
 
@@ -210,9 +211,211 @@ h1 {
 
 .list-container {
   width: 1200px;
-  height: 2000px;
+  min-height: 1000px;
   background: url(notebook_background.jpg);
   background-size: cover;
   margin: auto;
   border: 2px solid #030303;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 350px);
+  grid-gap: 2rem;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  justify-content: center;
+}
+
+.search-header {
+  background-color: #0e58e0;
+  overflow: hidden;
+  border: 2px solid #030303;
+  width: 1200px;
+  margin-left: 118px;
+}
+
+.search-header h1 {
+  float: center;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.search-container {
+  width: 1200px;
+  min-height: 200px;
+  background: white;
+  margin: auto;
+  border: 2px solid #030303;
+}
+
+.search-box input {
+  margin-top: 10px;
+  width: 700px;
+  height: 45px;
+  border: 2px solid #030303;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.search-box input:focus::placeholder {
+  color: transparent;
+}
+
+
+#location {
+  font-size: 20px;
+}
+
+.search-box button {
+  text-align: center;
+  height: 53px;
+  width: 80px;
+  border: 2px solid #030303;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.search-box button:active {
+  text-align: center;
+  height: 53px;
+  width: 80px;
+  border: 2px solid #030303;
+  border-radius: 5px;
+  font-size: 20px;
+  color: white;
+  background-color: #0e58e0;
+}
+
+.results-header {
+  background-color: #0e58e0;
+  overflow: hidden;
+  border: 2px solid #030303;
+  width: 1200px;
+  margin-left: 118px;
+}
+
+.results-header h1 {
+  float: center;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.results-container {
+  width: 1200px;
+  min-height: 150px;
+  background: white;
+  margin: auto;
+  border: 2px solid #030303;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 350px);
+  grid-gap: 2rem;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  justify-content: center;
+}
+
+.restaurant-card {
+  height: 250px;
+  width: 300px;
+  margin-left: 22px;
+  border: 3px solid #030303;
+  border-radius: 20px;
+  text-align: center;
+  background-color: #ffee51;
+  overflow: hidden;
+}
+
+.review-header {
+  background-color: #0e58e0;
+  overflow: hidden;
+  border: 2px solid #030303;
+  width: 1200px;
+  margin-left: 118px;
+}
+
+.review-header h1 {
+  float: center;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.loader-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: grey; opacity: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border: 4px solid black;
+  animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: black;
+  animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  25% {
+    transform: rotate(180deg);
+  }
+  
+  50% {
+    transform: rotate(180deg);
+  }
+  
+  75% {
+    transform: rotate(360deg);
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  
+  25% {
+    height: 0%;
+  }
+  
+  50% {
+    height: 100%;
+  }
+  
+  75% {
+    height: 100%;
+  }
+  
+  100% {
+    height: 0%;
+  }
 }

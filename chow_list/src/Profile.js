@@ -97,6 +97,7 @@ class Profile extends Component {
                 <div className="main-header" >
                     <h1>Chow List</h1>
                 </div>
+
                 <div className="topnav">
                     <a href="/main">Home</a>
                     <a className="active" href="/user_profile">Profile</a>
@@ -104,9 +105,11 @@ class Profile extends Component {
                     <a href="/reviews">Reviews</a>
                     <a href="/" onClick={() => this.handleLogoutClick()}>Logout</a>
                 </div>
+
                 <div className="profile-header" >
                     <h1>My Profile</h1>
                 </div>
+
                 <div className="profile-container">
                     <div className="pic-container">
                         <img className="profile-img" src={img} alt=""></img>
@@ -143,9 +146,11 @@ class Profile extends Component {
                     </div>
                     <div id="clear"></div>
                 </div>
+
                 <div className="list-header" >
                     <h1>My List</h1>
                 </div>
+                
                 <div className="list-container">
 
                 </div>
