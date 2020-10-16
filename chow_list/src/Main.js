@@ -42,10 +42,20 @@ class Main extends Component {
                     <a href="/reviews">Reviews</a>
                     <a href="/" onClick={() => this.handleLogoutClick()}>Logout</a>
                 </div>
-                <br></br>
-                <div className="greeting">
-                    <h1>Welcome to Chow List</h1>
+                <div className="home-header" >
+                    <h1>Home</h1>
+                </div>
+                <div className="main-container">
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <h1>Welcome to Chow List!</h1>
                     <h1 className="username">{this.props.user.username}</h1>
+                    <h2>Chow List is a simple and easy-to-use web application that provides 
+                        traveling foodies with a safe and secure environment to look up various locations,
+                         favorite popular restaurants as potential future destinations and leave reviews so 
+                         as to let others know exactly how your experience went! </h2>
+                    <h2>Click on the navigation bar above to get started!</h2>
                 </div>
             </div>
         )

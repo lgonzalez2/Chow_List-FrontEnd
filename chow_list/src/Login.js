@@ -34,13 +34,17 @@ class login extends Component {
         { withCredentials: true})
         .then(response => {
             console.log(response.data);
-            if (response.data.logged_in) {
+            if (response.data.status === "created") {
                 this.props.handleSuccessfulAuth(response.data);
+            } else {
+                this.setState({
+                    loginErrors: "Sorry, that username/password doesn't exist! Please try again!"
+                });
             }
         }).catch(error => {
             console.log("login error", error);
             this.setState({
-                registrationErrors: "Sorry, that username/password doesn't exist! Please try again!"
+                loginErrors: "Sorry, that username/password doesn't exist! Please try again!"
             });
         });
     }

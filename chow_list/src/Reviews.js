@@ -38,7 +38,9 @@ class Reviews extends Component {
                     <a className="active" href="/reviews">Reviews</a>
                     <a href="/" onClick={() => this.handleLogoutClick()}>Logout</a>
                 </div>
-                <br></br>
+                <div className="review-header" >
+                    <h1>Reviews</h1>
+                </div>
                 <div className="greeting">
                     <h1>Reviews Page</h1>
                     <h1 className="username">{this.props.user.username}</h1>

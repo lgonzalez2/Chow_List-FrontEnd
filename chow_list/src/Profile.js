@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import Logo from './empty_avatar.png';
+import FavoritedRestaurant from './FavoritedRestaurant';
 
 class Profile extends Component {
 
@@ -10,13 +11,16 @@ class Profile extends Component {
 
         this.state = {
             showPicForm: false,
-            showBioForm: false
+            showBioForm: false,
+            favoriteRestaurants: [],
+            showList: false
         }
 
         this.handleLogoutClick = this.handleLogoutClick.bind(this);
         this.handlePhotoBtnClick = this.handlePhotoBtnClick.bind(this);
         this.handleBioBtnClick = this.handleBioBtnClick.bind(this);
     }
+
 
     handlePhotoBtnClick() {
         this.setState({
@@ -81,6 +85,20 @@ class Profile extends Component {
         }
     }
 
+    handleListClick() {
+        axios.get(`http://localhost:3001/users/${this.props.user.id}`, { withCredentials: true })
+        .then(response => {
+            console.log(response.data.favorite_restaurants);
+            this.setState({
+                showList:true,
+                favoriteRestaurants: response.data.favorite_restaurants
+            });
+        }).catch(error => {
+            console.log("user fetch error", error);
+        });
+    }
+
+
     render() {
         let img = this.props.user.photo;
         let bio = this.props.user.bio;
@@ -89,7 +107,7 @@ class Profile extends Component {
             img = Logo;
         }
         if (bio === "") {
-            bio = "You currently do not have a bio, please click on the 'create bio' button to add one!"
+            bio = "You currently do not have a bio, please click on the 'Add/Change Bio' button to add one!"
         }
 
         return (
@@ -97,6 +115,7 @@ class Profile extends Component {
                 <div className="main-header" >
                     <h1>Chow List</h1>
                 </div>
+
                 <div className="topnav">
                     <a href="/main">Home</a>
                     <a className="active" href="/user_profile">Profile</a>
@@ -104,9 +123,11 @@ class Profile extends Component {
                     <a href="/reviews">Reviews</a>
                     <a href="/" onClick={() => this.handleLogoutClick()}>Logout</a>
                 </div>
+
                 <div className="profile-header" >
                     <h1>My Profile</h1>
                 </div>
+
                 <div className="profile-container">
                     <div className="pic-container">
                         <img className="profile-img" src={img} alt=""></img>
@@ -124,6 +145,8 @@ class Profile extends Component {
                         )}
                     </div>
                     <div className="info-container">
+                        <br></br>
+                        <br></br>
                         <h1 className="username">{this.props.user.username}</h1>
                         <h3>{bio}</h3>
                         <br></br>
@@ -141,9 +164,21 @@ class Profile extends Component {
                     </div>
                     <div id="clear"></div>
                 </div>
-                <div className="list-header" >
-                    <h1>My List</h1>
+
+                {this.state.showList === false ? (
+                    <div className= "list-button-container">
+                        <button onClick={() => this.handleListClick()}>Show List</button>
+                    </div>
+                ) : (
+                 <div>
+                    <div className="list-header" >
+                        <h1>My List</h1>
+                    </div>
+                    <div className="list-container">
+                        {this.state.favoriteRestaurants.map((r) => <FavoritedRestaurant restaurant={r} key={r.id}/>)}    
+                    </div>
                 </div>
+                )}
             </div>
         )
     }
