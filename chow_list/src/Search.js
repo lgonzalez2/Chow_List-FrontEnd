@@ -106,7 +106,7 @@ class Search extends Component {
                 } else if (v === "Contemporary") {
                     newValues.push('10669')
                 } else if (v === "Fusion") {
-                    newValues.push('10671')
+                newValues.push('10671')
                 } else if (v === "Gluten Free") {
                     newValues.push('10992')
                 } else if (v === "Grill") {
@@ -117,7 +117,7 @@ class Search extends Component {
                     newValues.push('10346')
                 } else if (v === "International") {
                     newValues.push('10648')
-                } else if (v === "Italian") {
+                }else if (v === "Italian") {
                     newValues.push('4617')
                 } else if (v === "Japanese") {
                     newValues.push('5473')
@@ -245,7 +245,7 @@ class Search extends Component {
                     </div>
                 ) : (
                     <div className="results-container">
-                        {this.state.restaurants.map((restaurant) => <Restaurant restaurant={restaurant} key={restaurant.location_id} />)}
+                        {this.state.restaurants.map((r) => <Restaurant restaurant={r} key={r.location_id} />)}
                     </div>
                 )}
 
