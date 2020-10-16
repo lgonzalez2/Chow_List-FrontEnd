@@ -349,6 +349,18 @@ h1 {
   justify-content: center;
 }
 
+.ui.bottom.attached.button {
+  color: #030303;
+  background-color: #4f89f3;
+  border: 2px solid #030303;
+}
+
+.ui.bottom.attached.button:active {
+  color: white;
+  background-color: #4f89f3;
+  border: 2px solid white;
+}
+
 .review-header {
   background-color: #0e58e0;
   overflow: hidden;

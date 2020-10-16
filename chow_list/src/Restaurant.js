@@ -14,12 +14,23 @@ class Restaurant extends Component {
             <Card.Content>
                 <Card.Header>{this.props.restaurant.name}</Card.Header>
                 {this.props.restaurant.price_level === "" ? (
-                    <Card.Meta>Price Level: {this.props.restaurant.price}</Card.Meta>
+                        <Card.Meta>Price Level: {this.props.restaurant.price}</Card.Meta>
                 ) : (
-                    <Card.Meta>Price Level: {this.props.restaurant.price_level}</Card.Meta>
+                        <Card.Meta>Price Level: {this.props.restaurant.price_level}</Card.Meta>
                 )}
                 <br></br>
                 <Card.Header>Overall Ranking: {this.props.restaurant.ranking}</Card.Header>
+            </Card.Content>
+            <Card.Content extra >
+                <a className="link" href={this.props.restaurant.website} target="_blank">
+                    Visit Website
+                </a>
+            </Card.Content>
+            <Card.Content extra >
+                <div className="ui bottom attached button">
+                    <i class="add icon"></i>
+                    Add to Your List
+                </div>
             </Card.Content>
         </Card>
     )

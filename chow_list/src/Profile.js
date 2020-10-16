@@ -89,7 +89,7 @@ class Profile extends Component {
             img = Logo;
         }
         if (bio === "") {
-            bio = "You currently do not have a bio, please click on the 'create bio' button to add one!"
+            bio = "You currently do not have a bio, please click on the 'Add/Change Bio' button to add one!"
         }
 
         return (
@@ -150,7 +150,7 @@ class Profile extends Component {
                 <div className="list-header" >
                     <h1>My List</h1>
                 </div>
-                
+
                 <div className="list-container">
 
                 </div>
