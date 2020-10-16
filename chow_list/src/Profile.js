@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import Logo from './empty_avatar.png';
+import FavoritedRestaurant from './FavoritedRestaurant';
 
 class Profile extends Component {
 
@@ -10,13 +11,16 @@ class Profile extends Component {
 
         this.state = {
             showPicForm: false,
-            showBioForm: false
+            showBioForm: false,
+            favoriteRestaurants: [],
+            showList: false
         }
 
         this.handleLogoutClick = this.handleLogoutClick.bind(this);
         this.handlePhotoBtnClick = this.handlePhotoBtnClick.bind(this);
         this.handleBioBtnClick = this.handleBioBtnClick.bind(this);
     }
+
 
     handlePhotoBtnClick() {
         this.setState({
@@ -80,6 +84,20 @@ class Profile extends Component {
             return <Redirect to="/" />
         }
     }
+
+    handleListClick() {
+        axios.get(`http://localhost:3001/users/${this.props.user.id}`, { withCredentials: true })
+        .then(response => {
+            console.log(response.data.favorite_restaurants);
+            this.setState({
+                showList:true,
+                favoriteRestaurants: response.data.favorite_restaurants
+            });
+        }).catch(error => {
+            console.log("user fetch error", error);
+        });
+    }
+
 
     render() {
         let img = this.props.user.photo;
@@ -147,13 +165,20 @@ class Profile extends Component {
                     <div id="clear"></div>
                 </div>
 
-                <div className="list-header" >
-                    <h1>My List</h1>
+                {this.state.showList === false ? (
+                    <div className= "list-button-container">
+                        <button onClick={() => this.handleListClick()}>Show List</button>
+                    </div>
+                ) : (
+                 <div>
+                    <div className="list-header" >
+                        <h1>My List</h1>
+                    </div>
+                    <div className="list-container">
+                        {this.state.favoriteRestaurants.map((r) => <FavoritedRestaurant restaurant={r} key={r.id}/>)}    
+                    </div>
                 </div>
-
-                <div className="list-container">
-
-                </div>
+                )}
             </div>
         )
     }

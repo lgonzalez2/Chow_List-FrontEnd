@@ -55,6 +55,7 @@ class Search extends Component {
         super(props);
 
         this.state = {
+            currentLocationId: "",
             restaurants: [],
             loading: false,
             results: false,
@@ -160,11 +161,30 @@ class Search extends Component {
         this.setState({ loading: true}, () => {
             axios.request(options).then(response => {
                 const location = response.data.data[0].result_object.location_id;
+
+
+                axios.post("http://localhost:3001/locations", {
+                    name: response.data.data[0].result_object.location_string,
+                    geo_id: location
+                }, 
+                { withCredentials: true})
+                .then(response => {
+                    if (response.data.status === 'created') {
+                        this.setState({
+                            currentLocationId: response.data.location.id
+                        });
+                    }
+                }).catch(error => {
+                    console.log("location create error", error);
+                });
+                  
+
+
                 const options2 = {
                     method: 'GET',
                     url: 'https://rapidapi.p.rapidapi.com/restaurants/list',
                     params: {
-                      location_id: response.data.data[0].result_object.location_id,
+                      location_id: location,
                       lunit: 'mi',
                       limit: '30',
                       combined_food: newValues,
@@ -177,8 +197,7 @@ class Search extends Component {
                       'x-rapidapi-key': '7b24c70170mshddb8c777b9e94a2p1f81c9jsna522057993d1'
                     }
                 };
-                  
-                  axios.request(options2).then(response => {
+                axios.request(options2).then(response => {
                     let array = response.data.data;
                     for (let i = 0; i < array.length; i++) {
                         if (array[i].location_id === location || array[i].photo === undefined) {
@@ -245,7 +264,7 @@ class Search extends Component {
                     </div>
                 ) : (
                     <div className="results-container">
-                        {this.state.restaurants.map((r) => <Restaurant restaurant={r} key={r.location_id} />)}
+                        {this.state.restaurants.map((r) => <Restaurant restaurant={r} key={r.location_id} location={this.state.currentLocationId} user={this.props.user}/>)}
                     </div>
                 )}
 

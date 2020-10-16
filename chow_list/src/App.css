@@ -195,6 +195,27 @@ h1 {
   clear: both;
 }
 
+.list-button-container {
+  background-color: #0e58e0;
+  overflow: hidden;
+  border: 2px solid #030303;
+  width: 1200px;
+  margin-left: 120px;
+  height: 50px;
+}
+
+.list-button-container button {
+  text-align: center;
+  height: 30px;
+  width: 150px;
+  border: 2px solid #030303;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
 .list-header {
   background-color: #0e58e0;
   overflow: hidden;
@@ -216,7 +237,7 @@ h1 {
 .list-container {
   width: 1200px;
   min-height: 1000px;
-  background: url(notebook_background.jpg);
+  background: url(notebook2.jpg);
   background-size: cover;
   margin: auto;
   border: 2px solid #030303;
