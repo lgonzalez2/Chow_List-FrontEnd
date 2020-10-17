@@ -3,8 +3,6 @@ import { Card } from 'semantic-ui-react';
 import NoImage from './noimageavailable.jpg';
 import axios from 'axios';
 
-let img = "";
-
 class Restaurant extends Component {
 
 
@@ -15,6 +13,7 @@ class Restaurant extends Component {
     }
 
     handleClick() {
+        let img = "";
         let price_level = "";
 
         if (this.props.restaurant.price_level === "") {
@@ -22,6 +21,15 @@ class Restaurant extends Component {
         } else {
             price_level = this.props.restaurant.price_level;
         }
+
+        if (this.props.restaurant.photo === undefined) {
+            img = NoImage
+        } else {
+            img = this.props.restaurant.photo.images.original.url
+        }
+    
+
+        console.log(img);
 
         axios.post("http://localhost:3001/restaurants", {
                     name: this.props.restaurant.name,
@@ -58,16 +66,13 @@ class Restaurant extends Component {
 
 
     render() {
-
-    if (this.props.restaurant.photo === undefined) {
-        img = NoImage
-    } else {
-        img = this.props.restaurant.photo.images.medium.url
-    }
-
     return (
         <Card color="blue">
-            <img src={img} alt="" height={250}/>
+            {this.props.restaurant.photo === undefined ? (
+                <img src={NoImage} alt="" height={250}/>
+            ) : (
+                <img src={this.props.restaurant.photo.images.original.url} alt="" height={250}/>
+            )}
             <Card.Content>
                 <Card.Header>{this.props.restaurant.name}</Card.Header>
                 {this.props.restaurant.price_level === "" ? (

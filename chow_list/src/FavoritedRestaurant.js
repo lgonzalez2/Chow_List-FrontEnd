@@ -1,15 +1,8 @@
 import React, { Component } from 'react'; 
 import { Card } from 'semantic-ui-react';
 
-let rating ="";
-
 class FavoritedRestaurant extends Component {
     render() {
-
-    if (this.props.restaurant.rating === null) {
-        rating = "No rating yet available"
-    }
-
     return (
         <Card color="blue">
             <img src={this.props.restaurant.image} alt="" height={250}/>
@@ -17,7 +10,7 @@ class FavoritedRestaurant extends Component {
                 <Card.Header>{this.props.restaurant.name}</Card.Header>
                 <Card.Meta>Price Level: {this.props.restaurant.price_level}</Card.Meta>
                 <br></br>
-                <Card.Header>Overall Ranking: {rating}</Card.Header>
+                <Card.Header>Overall Ranking: {this.props.restaurant.rating}</Card.Header>
             </Card.Content>
             <Card.Content extra >
                 <a className="link" href={this.props.restaurant.website} target="_blank" rel="noopener noreferrer">
