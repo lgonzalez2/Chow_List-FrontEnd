@@ -244,7 +244,7 @@ h1 {
 
 .profile-container {
   width: 1200px;
-  background-color: yellow;
+  background-color: white;
   margin: auto;
   border: 2px solid #030303;
 }
@@ -252,13 +252,12 @@ h1 {
 .pic-container {
   width: 600px;
   float: left;
-  height: 504px;
   background-color: white;
 }
 
 .profile-img {
-  width:80%;
-  height:70%;
+  width:70%;
+  height: 50%;
   border: 3px solid #030303;
   margin-top: 60px;
   margin-left: 60px;
@@ -272,7 +271,7 @@ h1 {
   border: 2px solid #030303;
   cursor: pointer;
   margin-bottom: 10px;
-  margin-top: 7px;
+  margin-top: 90px;
 }
 
 
@@ -300,17 +299,18 @@ h1 {
 
 .pic-form button {
   margin-left: 10px;
+  margin-top: 10px;
 }
 
 .info-container {
   width: 596px;
-  height: 504px;
+  min-height: 504px;
   float: left;
   background-color: white;
 }
 
 .info-container h1 {
-  margin-top: 80px;
+  margin-top: 120px;
   margin-right: 60px;
   font-size: 50px;
 }
@@ -331,7 +331,7 @@ h1 {
   border: 2px solid #030303;
   cursor: pointer;
   margin-bottom: 10px;
-  margin-top: 7px;
+  margin-top: 170px;
 }
 
 .info-container button:active {
@@ -352,7 +352,7 @@ h1 {
 
 textarea {
   width: 250px;
-  height: 60px;
+  height: 62px;
   border: 2px solid black;
 }
 
@@ -377,7 +377,7 @@ textarea {
 .list-button-container button {
   text-align: center;
   height: 30px;
-  width: 150px;
+  width: 200px;
   border: 2px solid #030303;
   border-radius: 5px;
   font-size: 20px;
@@ -593,6 +593,50 @@ textarea {
   padding: 10px;
   text-decoration: none;
   font-size: 20px;
+}
+
+.no-reviews-container {
+  width: 1200px;
+  min-height: 501px;
+  background: white;
+  margin: auto;
+  border: 2px solid #030303;
+}
+
+.no-reviews-container h1 {
+  padding-top: 200px;
+}
+
+.reviews-container {
+  width: 1200px;
+  min-height: 501px;
+  background: white;
+  margin: auto;
+  border: 2px solid #030303;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 350px);
+  grid-gap: 2rem;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  padding-left: 60px;
+  justify-content: center;
+}
+
+.avatar {
+  margin-left: 20px;
+}
+
+.review-username {
+  color: blue;
+  margin-top: 1px;
+  margin-right: 70px;
+}
+
+.user-detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .loader-wrapper {

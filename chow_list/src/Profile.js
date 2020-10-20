@@ -175,15 +175,15 @@ class Profile extends Component {
 
                 {this.state.showList === false ? (
                     <div className= "list-button-container">
-                        <button onClick={() => this.handleListClick()}>Show List</button>
+                        <button onClick={() => this.handleListClick()}>Show Bucket List</button>
                     </div>
                 ) : (
                  <div>
                     <div className="list-header" >
-                        <h1>My List</h1>
+                        <h1>My Bucket List</h1>
                     </div>
                     <div className="list-container">
-                        {this.state.favoriteRestaurants.map((r) => <FavoritedRestaurant restaurant={r} key={r.id}/>)}    
+                        {this.state.favoriteRestaurants.map((r) => <FavoritedRestaurant restaurant={r} key={r.id} user={this.props.user} />)}    
                     </div>
                 </div>
                 )}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
 import { Card } from 'semantic-ui-react';
+import axios from 'axios';
 
 class FavoritedRestaurant extends Component {
 
@@ -20,6 +21,35 @@ class FavoritedRestaurant extends Component {
             }
         });
     };
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        event.persist();
+
+        console.log(this.props.restaurant.id);
+        console.log(this.props.user.id);
+        console.log(event.target.description.value);
+        console.log(event.target.rating.value);
+        
+        axios.post("http://localhost:3001/reviews", {
+            description: event.target.description.value,
+            rating: event.target.rating.value,
+            user_id: this.props.user.id,
+            restaurant_id: this.props.restaurant.id
+        }, 
+        { withCredentials: true})
+        .then(response => {
+            if (response.data.status === 'created') {
+                console.log(response);
+                alert("Review added to reviews page!");
+                this.setState({
+                    showForm: false
+                });
+            }
+        }).catch(error => {
+            console.log("review create error", error);
+        });
+    }
 
 
     render() {
@@ -45,7 +75,7 @@ class FavoritedRestaurant extends Component {
             </Card.Content>
             {this.state.showForm ? (
                 <Card.Content extra >
-                    <form>
+                    <form onSubmit={this.handleSubmit} >
                         <textarea className="review-description" type="text" name="description" placeholder="What did you think?" />
                         <br></br>
                         <div>

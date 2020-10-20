@@ -1,11 +1,15 @@
 import React, { Component } from 'react'; 
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
+import ReviewCard from './ReviewCard';
 
 class Reviews extends Component {
 
     constructor(props) {
         super(props);
+
+        this.state = {
+            reviews: []
+        }
 
         this.handleLogoutClick = this.handleLogoutClick.bind(this);
     }
@@ -20,9 +24,14 @@ class Reviews extends Component {
     }
 
     componentDidMount() {
-        if (this.props.loggedInStatus === "NOT_LOGGED_IN") {
-            return <Redirect to="/" />
-        }
+        axios.get("http://localhost:3001/reviews", { withCredentials: true })
+        .then(response => {
+            this.setState({
+                reviews: response.data
+            });
+        }).catch(error => {
+            console.log("reviews fetch error", error);
+        });
     }
 
     render() {
@@ -41,10 +50,15 @@ class Reviews extends Component {
                 <div className="review-header" >
                     <h1>Reviews</h1>
                 </div>
-                <div className="greeting">
-                    <h1>Reviews Page</h1>
-                    <h1 className="username">{this.props.user.username}</h1>
-                </div>
+                {this.state.reviews.length > 1 ? (
+                     <div className="reviews-container" >
+                        {this.state.reviews.map((review) => <ReviewCard review={review} key={review.id} />)}
+                     </div>
+                ) : (
+                    <div className="no-reviews-container" >
+                        <h1>Sorry, no reviews written as of yet!</h1>
+                    </div>
+                )}
             </div>
         )
     }
