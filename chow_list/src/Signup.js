@@ -54,10 +54,16 @@ class signup extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.createUser}>
-                    <input type="text" name="username" placeholder="Username" onChange={this.handleChange} required/>
-                    <input type="password" name="password" placeholder="Password" onChange={this.handleChange} required/>
-                    <input type="password" name="password_confirmation" placeholder="Password Confirmation" onChange={this.handleChange} required/>
+                <form className="signup-form" onSubmit={this.createUser}>
+                    <div className="signup-username" >
+                        <input type="text" name="username" placeholder="Username" onChange={this.handleChange} required/>
+                    </div>
+                    <div className="signup-password" >
+                        <input type="password" name="password" placeholder="Password" onChange={this.handleChange} required/>
+                    </div>
+                    <div className="signup-password-confirmation" >
+                        <input type="password" name="password_confirmation" placeholder="Password Confirmation" onChange={this.handleChange} required/>
+                    </div>
                     <button type="submit">Submit</button>
                 </form>
                 {this.state.registrationErrors !== "" ? (

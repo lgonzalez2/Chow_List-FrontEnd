@@ -134,9 +134,12 @@ class Profile extends Component {
                         <br></br>
                         <button onClick={() => this.handlePhotoBtnClick()}>Add/Change Profile Pic</button>
                         {this.state.showPicForm ? (
-                            <div>
-                                <form onSubmit={this.updatePic}>
-                                    <input type="text" name="photo" placeholder="Your Photo Url"/>
+                            <div className="photo-form-container">
+                                <form className="pic-form" onSubmit={this.updatePic}>
+                                    <br></br>
+                                    <div className="pic-input">
+                                        <input type="text" name="photo" placeholder="Your Photo Url"/>
+                                    </div>
                                     <button type="submit">Submit</button>
                                 </form>
                             </div>
@@ -148,13 +151,18 @@ class Profile extends Component {
                         <br></br>
                         <br></br>
                         <h1 className="username">{this.props.user.username}</h1>
-                        <h3>{bio}</h3>
+                        <div className="bio-container" >
+                            <h3>{bio}</h3>
+                        </div>
                         <br></br>
                         <button onClick={() => this.handleBioBtnClick()}>Add/Change Bio</button>
                         {this.state.showBioForm ? (
-                            <div>
-                                <form onSubmit={this.updateBio}>
-                                    <input type="text" name="bio" placeholder="Enter a short bio"/>
+                            <div className="info-form-container">
+                                <form className="bio-form" onSubmit={this.updateBio}>
+                                    <br></br>
+                                    <div>
+                                        <textarea type="text" name="bio" placeholder="Enter a short bio"/>
+                                    </div>
                                     <button type="submit">Submit</button>
                                 </form>
                             </div>

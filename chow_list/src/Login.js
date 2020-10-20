@@ -52,9 +52,13 @@ class login extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.login}>
-                    <input type="text" name="username" placeholder="Username" onChange={this.handleChange} />
-                    <input type="password" name="password" placeholder="Password" onChange={this.handleChange} />
+                <form className="login-form" onSubmit={this.login}>
+                    <div className="login-username" >
+                        <input type="text" name="username" placeholder="Username" onChange={this.handleChange} />
+                    </div>
+                    <div className="login-password">
+                        <input type="password" name="password" placeholder="Password" onChange={this.handleChange} />
+                    </div>
                     <button type="submit">Submit</button>
                 </form>
                 {this.state.loginErrors !== "" ? (

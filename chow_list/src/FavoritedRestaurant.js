@@ -2,6 +2,26 @@ import React, { Component } from 'react';
 import { Card } from 'semantic-ui-react';
 
 class FavoritedRestaurant extends Component {
+
+    constructor() {
+        super();
+
+        this.state = {
+            showForm: false
+        }
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick = () => {
+        this.setState(previousState => {
+            return {
+                showForm: !previousState.showForm
+            }
+        });
+    };
+
+
     render() {
     return (
         <Card color="blue">
@@ -17,12 +37,33 @@ class FavoritedRestaurant extends Component {
                     Visit Website
                 </a>
             </Card.Content>
-            {/* <Card.Content extra >
+            <Card.Content extra >
                 <div className="ui bottom attached button" onClick={() => this.handleClick()}>
                     <i className="add icon"></i>
-                    Add to Your List
+                    Write a Review
                 </div>
-            </Card.Content> */}
+            </Card.Content>
+            {this.state.showForm ? (
+                <Card.Content extra >
+                    <form>
+                        <textarea className="review-description" type="text" name="description" placeholder="What did you think?" />
+                        <br></br>
+                        <div>
+                            Rating: 
+                            <select className="dropdown" type="dropdown" name= "rating">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <button className="review-submit" type="submit">Submit</button>
+                    </form>
+                </Card.Content>
+            ) : (
+                ""
+            )}
         </Card>
     )
 }
