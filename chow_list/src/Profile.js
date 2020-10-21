@@ -21,6 +21,29 @@ class Profile extends Component {
         this.handleBioBtnClick = this.handleBioBtnClick.bind(this);
     }
 
+    handleFavoriteRestaurantDelete = (restaurant_id) => {
+        let favorites = [];
+        console.log(restaurant_id);
+        axios.get(`http://localhost:3001/restaurants/${restaurant_id}`, { withCredentials: true })
+        .then(response => {
+            favorites = response.data.favorite_restaurants;
+            console.log(favorites);
+            const currentFavorite = favorites.filter(f => f.user_id === this.props.user.id);
+            console.log(currentFavorite[0]);
+            
+            axios.delete(`http://localhost:3001/favorite_restaurants/${currentFavorite[0].id}`, { withCredentials: true })
+            .then(response => {
+                this.setState({
+                    showList: false
+                });
+            }).catch(error => {
+                console.log("favorite restaurant delete error", error);
+            });
+        }).catch(error => {
+            console.log("restaurant fetch error", error);
+        });
+    }
+
 
     handlePhotoBtnClick() {
         this.setState({
@@ -88,10 +111,10 @@ class Profile extends Component {
     handleListClick() {
         axios.get(`http://localhost:3001/users/${this.props.user.id}`, { withCredentials: true })
         .then(response => {
-            console.log(response.data.favorite_restaurants);
+            console.log(response.data);
             this.setState({
                 showList:true,
-                favoriteRestaurants: response.data.favorite_restaurants
+                favoriteRestaurants: response.data.restaurants
             });
         }).catch(error => {
             console.log("user fetch error", error);
@@ -134,9 +157,12 @@ class Profile extends Component {
                         <br></br>
                         <button onClick={() => this.handlePhotoBtnClick()}>Add/Change Profile Pic</button>
                         {this.state.showPicForm ? (
-                            <div>
-                                <form onSubmit={this.updatePic}>
-                                    <input type="text" name="photo" placeholder="Your Photo Url"/>
+                            <div className="photo-form-container">
+                                <form className="pic-form" onSubmit={this.updatePic}>
+                                    <br></br>
+                                    <div className="pic-input">
+                                        <input type="text" name="photo" placeholder="Your Photo Url"/>
+                                    </div>
                                     <button type="submit">Submit</button>
                                 </form>
                             </div>
@@ -148,13 +174,18 @@ class Profile extends Component {
                         <br></br>
                         <br></br>
                         <h1 className="username">{this.props.user.username}</h1>
-                        <h3>{bio}</h3>
+                        <div className="bio-container" >
+                            <h3>{bio}</h3>
+                        </div>
                         <br></br>
                         <button onClick={() => this.handleBioBtnClick()}>Add/Change Bio</button>
                         {this.state.showBioForm ? (
-                            <div>
-                                <form onSubmit={this.updateBio}>
-                                    <input type="text" name="bio" placeholder="Enter a short bio"/>
+                            <div className="info-form-container">
+                                <form className="bio-form" onSubmit={this.updateBio}>
+                                    <br></br>
+                                    <div>
+                                        <textarea type="text" name="bio" placeholder="Enter a short bio"/>
+                                    </div>
                                     <button type="submit">Submit</button>
                                 </form>
                             </div>
@@ -167,15 +198,15 @@ class Profile extends Component {
 
                 {this.state.showList === false ? (
                     <div className= "list-button-container">
-                        <button onClick={() => this.handleListClick()}>Show List</button>
+                        <button onClick={() => this.handleListClick()}>Show Bucket List</button>
                     </div>
                 ) : (
                  <div>
                     <div className="list-header" >
-                        <h1>My List</h1>
+                        <h1>My Bucket List</h1>
                     </div>
                     <div className="list-container">
-                        {this.state.favoriteRestaurants.map((r) => <FavoritedRestaurant restaurant={r} key={r.id}/>)}    
+                        {this.state.favoriteRestaurants.map((r) => <FavoritedRestaurant restaurant={r} key={r.id} user={this.props.user} handleDelete={this.handleFavoriteRestaurantDelete} />)}    
                     </div>
                 </div>
                 )}

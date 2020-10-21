@@ -52,7 +52,7 @@ class Restaurant extends Component {
                         .then(response => {
                             if (response.data.status === 'created') {
                                 console.log(response.data.favorite_restaurant)
-                                alert("Restaurant added to Your List!")
+                                alert("Restaurant added to Your Bucket List!")
                             }
                         }).catch(error => {
                             console.log("favorite restaurant create error", error);

@@ -40,19 +40,14 @@ class home extends Component {
                     <h2>Please Sign Up if you don't already have an account! </h2>
                     <br></br>
                     <br></br>
-                    <br></br>
                     <div className="home-container-2">
                         <div className="login-container">
-                            <div>
-                                <Login handleSuccessfulAuth={this.handleSuccessfulAuth} />
-                                <br></br>
-                            </div>
+                            <Login handleSuccessfulAuth={this.handleSuccessfulAuth} />
+                            <br></br>
                         </div>
                         <div className="signup-container">
-                            <div>
-                                <SignUp handleSuccessfulAuth={this.handleSuccessfulAuth}/> 
-                                <br></br>
-                            </div>
+                            <SignUp handleSuccessfulAuth={this.handleSuccessfulAuth}/> 
+                            <br></br>
                         </div>
                         <div id="clear"></div>
                     </div>
