@@ -62,9 +62,9 @@ class login extends Component {
                     <button type="submit">Submit</button>
                 </form>
                 {this.state.loginErrors !== "" ? (
-                    <span className="error">
+                    <div className="error">
                         {this.state.loginErrors}
-                    </span>
+                    </div>
                 ) : (
                 ""
                 )}

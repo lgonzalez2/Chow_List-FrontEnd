@@ -42,7 +42,7 @@ class signup extends Component {
         }).catch(error => {
             console.log("registration error", error);
             this.setState({
-                registrationErrors: "Sorry, that username is already taken! Please pick another!"
+                registrationErrors: "Sorry, either that username is already taken, or the passwords didn't match! Please try again!"
             });
         });
     }
@@ -67,9 +67,9 @@ class signup extends Component {
                     <button type="submit">Submit</button>
                 </form>
                 {this.state.registrationErrors !== "" ? (
-                    <span className="error">
+                    <div className="signup-error">
                         {this.state.registrationErrors}
-                    </span>
+                    </div>
                 ) : (
                 ""
                 )}

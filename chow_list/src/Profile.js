@@ -21,6 +21,29 @@ class Profile extends Component {
         this.handleBioBtnClick = this.handleBioBtnClick.bind(this);
     }
 
+    handleFavoriteRestaurantDelete = (restaurant_id) => {
+        let favorites = [];
+        console.log(restaurant_id);
+        axios.get(`http://localhost:3001/restaurants/${restaurant_id}`, { withCredentials: true })
+        .then(response => {
+            favorites = response.data.favorite_restaurants;
+            console.log(favorites);
+            const currentFavorite = favorites.filter(f => f.user_id === this.props.user.id);
+            console.log(currentFavorite[0]);
+            
+            axios.delete(`http://localhost:3001/favorite_restaurants/${currentFavorite[0].id}`, { withCredentials: true })
+            .then(response => {
+                this.setState({
+                    showList: false
+                });
+            }).catch(error => {
+                console.log("favorite restaurant delete error", error);
+            });
+        }).catch(error => {
+            console.log("restaurant fetch error", error);
+        });
+    }
+
 
     handlePhotoBtnClick() {
         this.setState({
@@ -88,10 +111,10 @@ class Profile extends Component {
     handleListClick() {
         axios.get(`http://localhost:3001/users/${this.props.user.id}`, { withCredentials: true })
         .then(response => {
-            console.log(response.data.favorite_restaurants);
+            console.log(response.data);
             this.setState({
                 showList:true,
-                favoriteRestaurants: response.data.favorite_restaurants
+                favoriteRestaurants: response.data.restaurants
             });
         }).catch(error => {
             console.log("user fetch error", error);
@@ -183,7 +206,7 @@ class Profile extends Component {
                         <h1>My Bucket List</h1>
                     </div>
                     <div className="list-container">
-                        {this.state.favoriteRestaurants.map((r) => <FavoritedRestaurant restaurant={r} key={r.id} user={this.props.user} />)}    
+                        {this.state.favoriteRestaurants.map((r) => <FavoritedRestaurant restaurant={r} key={r.id} user={this.props.user} handleDelete={this.handleFavoriteRestaurantDelete} />)}    
                     </div>
                 </div>
                 )}

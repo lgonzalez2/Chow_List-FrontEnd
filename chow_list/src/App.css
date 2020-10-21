@@ -166,6 +166,13 @@
 
 .error {
   color: red;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+.signup-error {
+  color: red;
+  margin-right: 100px;
 }
 
 h1 {
@@ -420,6 +427,17 @@ textarea {
   justify-content: center;
 }
 
+.delete-btn {
+  background-color: red;
+  margin-left: 265px;
+  cursor: pointer;
+  border: 2px solid #030303;
+}
+
+.delete-btn:active {
+  background-color: white;
+}
+
 .review-description {
   width: 250px;
   height: 55px;
@@ -629,7 +647,6 @@ textarea {
 .review-username {
   color: blue;
   margin-top: 1px;
-  margin-right: 70px;
 }
 
 .user-detail {

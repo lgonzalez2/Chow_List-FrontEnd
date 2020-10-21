@@ -8,11 +8,13 @@ class FavoritedRestaurant extends Component {
         super();
 
         this.state = {
-            showForm: false
+            showForm: false,
+            // favoriteRestaurants: []
         }
 
         this.handleClick = this.handleClick.bind(this);
     }
+
 
     handleClick = () => {
         this.setState(previousState => {
@@ -40,7 +42,6 @@ class FavoritedRestaurant extends Component {
         { withCredentials: true})
         .then(response => {
             if (response.data.status === 'created') {
-                console.log(response);
                 alert("Review added to reviews page!");
                 this.setState({
                     showForm: false
@@ -55,6 +56,9 @@ class FavoritedRestaurant extends Component {
     render() {
     return (
         <Card color="blue">
+            <div>
+            <button className="delete-btn" onClick={() => this.props.handleDelete(this.props.restaurant.id)} >X</button>
+            </div>
             <img src={this.props.restaurant.image} alt="" height={250}/>
             <Card.Content>
                 <Card.Header>{this.props.restaurant.name}</Card.Header>
