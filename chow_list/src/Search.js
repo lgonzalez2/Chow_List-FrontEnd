@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import Restaurant from './Restaurant';
+import AppLogo from './app_logo.png';
 
 const animatedComponents = makeAnimated();
 
@@ -226,7 +227,7 @@ class Search extends Component {
         return (
             <div>
                 <div className="main-header" >
-                    <h1>Chow List</h1>
+                    <img className="app-logo" src={AppLogo} alt=""></img>
                 </div>
 
                 <div className="topnav">

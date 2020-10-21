@@ -1,6 +1,7 @@
 import React, { Component } from 'react'; 
 import axios from 'axios';
 import ReviewCard from './ReviewCard';
+import AppLogo from './app_logo.png';
 
 class Reviews extends Component {
 
@@ -38,7 +39,7 @@ class Reviews extends Component {
         return (
             <div>
                 <div className="main-header" >
-                    <h1>Chow List</h1>
+                    <img className="app-logo" src={AppLogo} alt=""></img>
                 </div>
                 <div className="topnav">
                     <a href="/main">Home</a>

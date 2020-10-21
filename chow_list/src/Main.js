@@ -1,6 +1,7 @@
 import React, { Component } from 'react'; 
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
+import AppLogo from './app_logo.png';
 
 class Main extends Component {
 
@@ -33,7 +34,7 @@ class Main extends Component {
         return (
             <div>
                 <div className="main-header" >
-                    <h1>Chow List</h1>
+                    <img className="app-logo" src={AppLogo} alt=""></img>
                 </div>
                 <div className="topnav">
                     <a className="active" href="/main">Home</a>

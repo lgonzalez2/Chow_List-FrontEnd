@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Login from './Login';
 import SignUp from './Signup';
 import { Redirect } from 'react-router-dom';
+import AppLogo from './app_logo.png';
 
 class home extends Component {
     constructor(props) {
@@ -25,7 +26,7 @@ class home extends Component {
         return (
             <div>
                 <div className="main-header" >
-                    <h1>Chow List</h1>
+                    <img src={AppLogo} alt=""></img>
                 </div>
                 <div className="home-container">
                     <br></br>

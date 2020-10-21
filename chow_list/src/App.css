@@ -209,6 +209,11 @@ h1 {
   font-size: 60px;
 }
 
+.main-header img {
+  height: 100%;
+  margin-bottom: 10px;
+}
+
 .home-header {
   background-color: #4f89f3;
   overflow: hidden;
@@ -269,6 +274,7 @@ h1 {
 
 .profile-container {
   width: 1200px;
+  min-height: 460px;
   background-color: white;
   margin: auto;
   border: 2px solid #030303;
@@ -282,10 +288,10 @@ h1 {
 }
 
 .profile-img {
-  width:70%;
-  height: 50%;
+  width: 50%;
+  height: 40%;
   border: 3px solid #030303;
-  margin-top: 60px;
+  margin-top: 50px;
   margin-left: 60px;
 }
 
@@ -297,7 +303,7 @@ h1 {
   border: 2px solid #030303;
   cursor: pointer;
   margin-bottom: 10px;
-  margin-top: 90px;
+  margin-top: 10px;
 }
 
 
@@ -317,6 +323,7 @@ h1 {
   background-color: #0336719f;
   margin-bottom: 10px;
   margin-left: 50px;
+  padding-bottom: 10px;
 }
 
 .pic-input input {
@@ -330,15 +337,16 @@ h1 {
 
 .info-container {
   width: 596px;
-  min-height: 504px;
+  min-height: 437px;
   float: left;
   background-color: white;
 }
 
 .info-container h1 {
-  margin-top: 120px;
+  margin-top: 70px;
   margin-right: 60px;
   font-size: 50px;
+  margin-bottom: 30px;
 }
 
 
@@ -356,8 +364,8 @@ h1 {
   background-color: #4f89f3;
   border: 2px solid #030303;
   cursor: pointer;
-  margin-bottom: 10px;
-  margin-top: 170px;
+  margin-bottom: 5px;
+  margin-top: 25px;
 }
 
 .info-container button:active {
@@ -372,7 +380,7 @@ h1 {
   width: 60%;
   display: inline-block;
   background-color: #0336719f;
-  margin-bottom: 10px;
+  margin-bottom: 11px;
   margin-right: 55px;
 }
 
