@@ -24,7 +24,9 @@ class ReviewCard extends Component {
                 <Rating icon='star' defaultRating={this.props.review.rating} maxRating={5} disabled/>
             </Card.Content>
             <Card.Content extra >
+                <a className="link" href={this.props.review.restaurant.website} target="_blank" rel="noopener noreferrer">
                     Visit Website
+                </a>
             </Card.Content>
         </Card>
     )

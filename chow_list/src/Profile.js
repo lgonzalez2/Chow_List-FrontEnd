@@ -36,6 +36,7 @@ class Profile extends Component {
                 this.setState({
                     showList: false
                 });
+                alert("Restaurant deleted!")
             }).catch(error => {
                 console.log("favorite restaurant delete error", error);
             });

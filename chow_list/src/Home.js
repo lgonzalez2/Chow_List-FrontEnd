@@ -33,8 +33,6 @@ class home extends Component {
                     <br></br>
                     <br></br>
                     <h1>Welcome to Chow List, your favorite hub for traveling foodies!</h1>
-                    <br></br>
-                    <br></br>
                     <h2>Please Login to continue</h2>
                         <h2>OR</h2> 
                     <h2>Please Sign Up if you don't already have an account! </h2>

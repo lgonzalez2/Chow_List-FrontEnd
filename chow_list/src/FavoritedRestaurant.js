@@ -8,8 +8,7 @@ class FavoritedRestaurant extends Component {
         super();
 
         this.state = {
-            showForm: false,
-            // favoriteRestaurants: []
+            showForm: false
         }
 
         this.handleClick = this.handleClick.bind(this);
