@@ -29,6 +29,7 @@ class App extends Component {
     axios.get("https://chow-list.herokuapp.com/logged_in", { withCredentials: true })
     .then(response => {
       if (response.data.logged_in && this.state.loggedInStatus === "NOT_LOGGED_IN") {
+        console.log(response.data.user);
         this.setState({
           loggedInStatus: "LOGGED_IN",
           user: response.data.user
@@ -50,6 +51,7 @@ class App extends Component {
 
 
   handleLogin(data) {
+    console.log(data);
     this.setState({
       loggedInStatus: "LOGGED_IN",
       user: data

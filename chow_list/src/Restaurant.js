@@ -42,7 +42,8 @@ class Restaurant extends Component {
                 { withCredentials: true})
                 .then(response => {
                     if (response.data) {
-                        
+                        console.log(response.data.restaurant.id);
+                        console.log(this.props.user.id);
                         
                         axios.post("https://chow-list.herokuapp.com/favorite_restaurants", {
                             user_id: this.props.user.id,
