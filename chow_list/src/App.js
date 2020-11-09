@@ -4,7 +4,7 @@ import Home from './Home';
 import Main from './Main';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import axios from 'axios';
-import Profile from './Profile';
+import Profile from './Profile';  
 import Search from './Search';
 import Reviews from './Reviews';
 

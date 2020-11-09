@@ -13,6 +13,7 @@ class home extends Component {
 
 
     handleSuccessfulAuth(data) {
+        console.log(data);
         this.props.handleLogin(data.user);
         this.props.history.push("/main");
     }
