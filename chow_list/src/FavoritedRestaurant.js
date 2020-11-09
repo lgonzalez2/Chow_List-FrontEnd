@@ -32,7 +32,7 @@ class FavoritedRestaurant extends Component {
         console.log(event.target.description.value);
         console.log(event.target.rating.value);
         
-        axios.post("http://localhost:3001/reviews", {
+        axios.post("https://chow-list.herokuapp.com/reviews", {
             description: event.target.description.value,
             rating: event.target.rating.value,
             user_id: this.props.user.id,

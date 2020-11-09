@@ -31,7 +31,7 @@ class Restaurant extends Component {
 
         console.log(img);
 
-        axios.post("http://localhost:3001/restaurants", {
+        axios.post("https://chow-list.herokuapp.com/restaurants", {
                     name: this.props.restaurant.name,
                     image: img,
                     website: this.props.restaurant.website,
@@ -44,7 +44,7 @@ class Restaurant extends Component {
                     if (response.data) {
                         
                         
-                        axios.post("http://localhost:3001/favorite_restaurants", {
+                        axios.post("https://chow-list.herokuapp.com/favorite_restaurants", {
                             user_id: this.props.user.id,
                             restaurant_id: response.data.restaurant.id
                         }, 

@@ -12,7 +12,7 @@ class Main extends Component {
     }
 
     handleLogoutClick() {
-        axios.delete("http://localhost:3001/logout", { withCredentials: true })
+        axios.delete("https://chow-list.herokuapp.com/logout", { withCredentials: true })
         .then(response => {
             this.props.handleLogout();
         }).catch(error => {

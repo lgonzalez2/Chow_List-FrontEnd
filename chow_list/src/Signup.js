@@ -27,7 +27,7 @@ class signup extends Component {
         event.target.reset()
         const { username, password, password_confirmation } = this.state
 
-        axios.post("http://localhost:3001/registrations", {
+        axios.post("https://chow-list.herokuapp.com/registrations", {
             username: username,
             password: password,
             password_confirmation: password_confirmation,

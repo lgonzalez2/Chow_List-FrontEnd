@@ -25,14 +25,14 @@ class Profile extends Component {
     handleFavoriteRestaurantDelete = (restaurant_id) => {
         let favorites = [];
         console.log(restaurant_id);
-        axios.get(`http://localhost:3001/restaurants/${restaurant_id}`, { withCredentials: true })
+        axios.get(`https://chow-list.herokuapp.com/restaurants/${restaurant_id}`, { withCredentials: true })
         .then(response => {
             favorites = response.data.favorite_restaurants;
             console.log(favorites);
             const currentFavorite = favorites.filter(f => f.user_id === this.props.user.id);
             console.log(currentFavorite[0]);
             
-            axios.delete(`http://localhost:3001/favorite_restaurants/${currentFavorite[0].id}`, { withCredentials: true })
+            axios.delete(`https://chow-list.herokuapp.com/favorite_restaurants/${currentFavorite[0].id}`, { withCredentials: true })
             .then(response => {
                 this.setState({
                     showList: false
@@ -66,7 +66,7 @@ class Profile extends Component {
             showPicForm: !this.state.showPicForm
         });
 
-        axios.patch(`http://localhost:3001/users/${this.props.user.id}`, {
+        axios.patch(`https://chow-list.herokuapp.com/users/${this.props.user.id}`, {
             photo: event.target.photo.value,
             bio: this.props.user.bio
         }, { withCredentials: true })
@@ -84,7 +84,7 @@ class Profile extends Component {
             showBioForm: !this.state.showBioForm
         });
 
-        axios.patch(`http://localhost:3001/users/${this.props.user.id}`, {
+        axios.patch(`https://chow-list.herokuapp.com/users/${this.props.user.id}`, {
             photo: this.props.user.photo,
             bio: event.target.bio.value
         }, { withCredentials: true })
@@ -96,7 +96,7 @@ class Profile extends Component {
     }
 
     handleLogoutClick() {
-        axios.delete("http://localhost:3001/logout", { withCredentials: true })
+        axios.delete("https://chow-list.herokuapp.com/logout", { withCredentials: true })
         .then(response => {
             this.props.handleLogout();
         }).catch(error => {
@@ -111,7 +111,7 @@ class Profile extends Component {
     }
 
     handleListClick() {
-        axios.get(`http://localhost:3001/users/${this.props.user.id}`, { withCredentials: true })
+        axios.get(`https://chow-list.herokuapp.com/users/${this.props.user.id}`, { withCredentials: true })
         .then(response => {
             console.log(response.data);
             this.setState({

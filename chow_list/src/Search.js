@@ -74,7 +74,7 @@ class Search extends Component {
     }
 
     handleLogoutClick() {
-        axios.delete("http://localhost:3001/logout", { withCredentials: true })
+        axios.delete("https://chow-list.herokuapp.com/logout", { withCredentials: true })
         .then(response => {
             this.props.handleLogout();
         }).catch(error => {
@@ -157,8 +157,8 @@ class Search extends Component {
             url: 'https://rapidapi.p.rapidapi.com/locations/auto-complete',
             params: {query: event.target.location.value, lang: 'en_US', units: 'mi'},
             headers: {
-              'x-rapidapi-host': 'tripadvisor1.p.rapidapi.com',
-              'x-rapidapi-key': '7b24c70170mshddb8c777b9e94a2p1f81c9jsna522057993d1'
+                'x-rapidapi-key': '7b24c70170mshddb8c777b9e94a2p1f81c9jsna522057993d1',
+                'x-rapidapi-host': 'tripadvisor1.p.rapidapi.com'
             }
           };
           
@@ -167,7 +167,7 @@ class Search extends Component {
                 const location = response.data.data[0].result_object.location_id;
 
 
-                axios.post("http://localhost:3001/locations", {
+                axios.post("https://chow-list.herokuapp.com/locations", {
                     name: response.data.data[0].result_object.location_string,
                     geo_id: location
                 }, 
@@ -197,8 +197,8 @@ class Search extends Component {
                       lang: 'en_US'
                     },
                     headers: {
-                      'x-rapidapi-host': 'tripadvisor1.p.rapidapi.com',
-                      'x-rapidapi-key': '7b24c70170mshddb8c777b9e94a2p1f81c9jsna522057993d1'
+                        'x-rapidapi-key': '7b24c70170mshddb8c777b9e94a2p1f81c9jsna522057993d1',
+                        'x-rapidapi-host': 'tripadvisor1.p.rapidapi.com'
                     }
                 };
                 axios.request(options2).then(response => {

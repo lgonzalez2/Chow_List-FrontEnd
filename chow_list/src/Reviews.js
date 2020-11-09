@@ -16,7 +16,7 @@ class Reviews extends Component {
     }
 
     handleLogoutClick() {
-        axios.delete("http://localhost:3001/logout", { withCredentials: true })
+        axios.delete("https://chow-list.herokuapp.com/logout", { withCredentials: true })
         .then(response => {
             this.props.handleLogout();
         }).catch(error => {
@@ -25,7 +25,7 @@ class Reviews extends Component {
     }
 
     componentDidMount() {
-        axios.get("http://localhost:3001/reviews", { withCredentials: true })
+        axios.get("https://chow-list.herokuapp.com/reviews", { withCredentials: true })
         .then(response => {
             this.setState({
                 reviews: response.data

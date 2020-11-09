@@ -27,7 +27,7 @@ class login extends Component {
 
         const {username, password} = this.state
 
-        axios.post("http://localhost:3001/sessions", {
+        axios.post("https://chow-list.herokuapp.com/sessions", {
             username: username,
             password: password
         }, 
