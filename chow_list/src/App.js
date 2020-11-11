@@ -26,7 +26,7 @@ class App extends Component {
 
 
   checkLoginStatus() {
-    axios.get("https://chow-list.herokuapp.com/logged_in", { withCredentials: true })
+    axios.get("https://cors-anywhere.herokuapp.com/https://chow-list.herokuapp.com/logged_in", { withCredentials: true })
     .then(response => {
       if (response.data.logged_in && this.state.loggedInStatus === "NOT_LOGGED_IN") {
         console.log(response.data.user);
