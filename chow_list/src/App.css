@@ -1,6 +1,10 @@
 #root {
   text-align: center;
-  background-color: grey;
+  background: url(produce_background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .App {
@@ -15,7 +19,7 @@
   display: inline-block;
   background-color: #0336719f;
   margin-bottom: 10px;
-  margin-left: 50px;
+  margin-left: 70px;
 }
 
 .login-username input {
@@ -111,10 +115,11 @@
   background-color: white;
   margin: auto;
   border: 2px solid #030303;
+  opacity: 90%;
 }
 
 .home-container-2 {
-  height: 300px;
+  height: 260px;
   width: 1195px;
   background-color: #ffcc33;
   margin: auto;
@@ -123,13 +128,14 @@
 .login-container {
   width: 600px;
   float: left;
-  height: 300px;
+  height: 260px;
   background-color: white;
 }
+
 .signup-container {
   width: 595px;
   float: left;
-  height: 300px;
+  height: 260px;
   background-color: white;
 }
 
@@ -140,6 +146,7 @@
   border: 2px solid #030303;
   width: 1200px;
   margin-left: 120px;
+  opacity: 90%;
 }
 
 /* Style the links inside the navigation bar */
@@ -161,7 +168,7 @@
 /* Add a color to the active/current link */
 .topnav a.active {
   background-color: #4f89f3;
-  color: white;
+  color: black;
 }
 
 .error {
@@ -190,15 +197,21 @@ h1 {
   width: 1200px;
   height: 130px;
   margin-left: 120px;
+  opacity: 80%;
 }
 
 .main-header h1 {
   padding-top: 15px;
   float: center;
-  color: #f2f2f2;
+  color: white;
   text-align: center;
   text-decoration: none;
   font-size: 60px;
+}
+
+.main-header img {
+  height: 100%;
+  margin-bottom: 10px;
 }
 
 .home-header {
@@ -208,11 +221,12 @@ h1 {
   width: 1200px;
   margin-left: 120px;
   height: 50px;
+  opacity: 80%;
 }
 
 .home-header h1 {
   float: center;
-  color: #f2f2f2;
+  color: black;
   text-align: center;
   padding: 10px;
   text-decoration: none;
@@ -221,14 +235,22 @@ h1 {
 
 .main-container {
   width: 1200px;
-  height: 515px;
+  height: 510px;
   background: white;
+  opacity: 90%;
   margin: auto;
   border: 2px solid #030303;
 }
 
 .main-container h1 {
   font-size: 50px;
+}
+
+.app-description {
+  margin-top: 40px;
+  margin-right: 60px;
+  margin-left: 30px;
+  word-wrap: break-word;
 }
 
 .profile-header {
@@ -238,11 +260,12 @@ h1 {
   width: 1200px;
   margin-left: 120px;
   height: 50px;
+  opacity: 80%;
 }
 
 .profile-header h1 {
   float: center;
-  color: #f2f2f2;
+  color: black;
   text-align: center;
   padding: 10px;
   text-decoration: none;
@@ -251,9 +274,11 @@ h1 {
 
 .profile-container {
   width: 1200px;
+  min-height: 460px;
   background-color: white;
   margin: auto;
   border: 2px solid #030303;
+  opacity: 95%;
 }
 
 .pic-container {
@@ -263,10 +288,10 @@ h1 {
 }
 
 .profile-img {
-  width:70%;
-  height: 50%;
+  width: 50%;
+  height: 40%;
   border: 3px solid #030303;
-  margin-top: 60px;
+  margin-top: 50px;
   margin-left: 60px;
 }
 
@@ -278,7 +303,7 @@ h1 {
   border: 2px solid #030303;
   cursor: pointer;
   margin-bottom: 10px;
-  margin-top: 90px;
+  margin-top: 10px;
 }
 
 
@@ -298,6 +323,7 @@ h1 {
   background-color: #0336719f;
   margin-bottom: 10px;
   margin-left: 50px;
+  padding-bottom: 10px;
 }
 
 .pic-input input {
@@ -311,15 +337,16 @@ h1 {
 
 .info-container {
   width: 596px;
-  min-height: 504px;
+  min-height: 437px;
   float: left;
   background-color: white;
 }
 
 .info-container h1 {
-  margin-top: 120px;
+  margin-top: 70px;
   margin-right: 60px;
   font-size: 50px;
+  margin-bottom: 30px;
 }
 
 
@@ -337,8 +364,8 @@ h1 {
   background-color: #4f89f3;
   border: 2px solid #030303;
   cursor: pointer;
-  margin-bottom: 10px;
-  margin-top: 170px;
+  margin-bottom: 5px;
+  margin-top: 25px;
 }
 
 .info-container button:active {
@@ -353,7 +380,7 @@ h1 {
   width: 60%;
   display: inline-block;
   background-color: #0336719f;
-  margin-bottom: 10px;
+  margin-bottom: 11px;
   margin-right: 55px;
 }
 
@@ -379,6 +406,7 @@ textarea {
   width: 1200px;
   margin-left: 120px;
   height: 50px;
+  opacity: 80%;
 }
 
 .list-button-container button {
@@ -400,11 +428,12 @@ textarea {
   width: 1200px;
   margin-left: 120px;
   height: 50px;
+  opacity: 80%;
 }
 
 .list-header h1 {
   float: center;
-  color: #f2f2f2;
+  color: black;
   text-align: center;
   padding: 10px;
   text-decoration: none;
@@ -425,6 +454,7 @@ textarea {
   padding-left: 60px;
   padding-bottom: 30px;
   justify-content: center;
+  opacity: 90%;
 }
 
 .delete-btn {
@@ -469,11 +499,12 @@ textarea {
   width: 1200px;
   margin-left: 120px;
   height: 50x;
+  opacity: 80%;
 }
 
 .search-header h1 {
   float: center;
-  color: #f2f2f2;
+  color: black;
   text-align: center;
   padding: 10px;
   text-decoration: none;
@@ -482,14 +513,15 @@ textarea {
 
 .search-container {
   width: 1200px;
-  min-height: 200px;
+  min-height: 320px;
   background: white;
   margin: auto;
   border: 2px solid #030303;
+  opacity: 90%;
 }
 
 .search-container h1 {
-  padding-top: 30px;
+  padding-top: 40px;
 }
 
 .search-box {
@@ -544,11 +576,12 @@ textarea {
   width: 1200px;
   margin-left: 120px;
   height: 50px;
+  opacity: 80%;
 }
 
 .results-header h1 {
   float: center;
-  color: #f2f2f2;
+  color: black;
   text-align: center;
   padding: 10px;
   text-decoration: none;
@@ -561,11 +594,12 @@ textarea {
   width: 1200px;
   margin-left: 120px;
   border: 2px solid #030303;
-  min-height: 180px;
+  min-height: 145px;
+  opacity: 90%;
 }
 
 .no-results-container h1 {
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
 .results-container {
@@ -581,6 +615,7 @@ textarea {
   padding-bottom: 30px;
   padding-left: 60px;
   justify-content: center;
+  opacity: 90%;
 }
 
 .ui.bottom.attached.button {
@@ -602,11 +637,12 @@ textarea {
   width: 1200px;
   margin-left: 120px;
   height: 50px;
+  opacity: 80%;
 }
 
 .review-header h1 {
   float: center;
-  color: #f2f2f2;
+  color: black;
   text-align: center;
   padding: 10px;
   text-decoration: none;
@@ -619,6 +655,7 @@ textarea {
   background: white;
   margin: auto;
   border: 2px solid #030303;
+  opacity: 80%;
 }
 
 .no-reviews-container h1 {
@@ -638,6 +675,7 @@ textarea {
   padding-bottom: 30px;
   padding-left: 60px;
   justify-content: center;
+  opacity: 90%;
 }
 
 .avatar {

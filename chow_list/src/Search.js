@@ -4,12 +4,14 @@ import { Redirect } from 'react-router-dom';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import Restaurant from './Restaurant';
+import AppLogo from './app_logo.png';
 
 const animatedComponents = makeAnimated();
 
 const customStyles = {
     option: (provided, state) => ({
-      ...provided
+      ...provided,
+      padding: 1
     }),
     control: (provided) => ({
       ...provided,
@@ -17,7 +19,9 @@ const customStyles = {
       fontSize: 20,
       border: "2px solid black",
       boxShadow: 'none'
-    })
+    }),
+    menu: styles => ({ ...styles,                 
+    })                 
   }  
 
 const arrayOfOptionValues = [
@@ -223,7 +227,7 @@ class Search extends Component {
         return (
             <div>
                 <div className="main-header" >
-                    <h1>Chow List</h1>
+                    <img className="app-logo" src={AppLogo} alt=""></img>
                 </div>
 
                 <div className="topnav">
@@ -248,6 +252,7 @@ class Search extends Component {
                             styles={ customStyles } 
                             isMulti
                             isClearable
+                            maxMenuHeight={82}
                             options={arrayOfOptionValues}
                             onChange={this.handleChange.bind(this)}/>
                         <button type="submit">Search</button>

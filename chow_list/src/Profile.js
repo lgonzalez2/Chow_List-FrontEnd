@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import Logo from './empty_avatar.png';
 import FavoritedRestaurant from './FavoritedRestaurant';
+import AppLogo from './app_logo.png';
 
 class Profile extends Component {
 
@@ -36,6 +37,7 @@ class Profile extends Component {
                 this.setState({
                     showList: false
                 });
+                alert("Restaurant deleted!")
             }).catch(error => {
                 console.log("favorite restaurant delete error", error);
             });
@@ -136,7 +138,7 @@ class Profile extends Component {
         return (
             <div>
                 <div className="main-header" >
-                    <h1>Chow List</h1>
+                    <img className="app-logo" src={AppLogo} alt=""></img>
                 </div>
 
                 <div className="topnav">
